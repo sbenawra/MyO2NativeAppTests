@@ -1,2 +1,2 @@
 # MyO2NativeAppTests
-Functional Tests for Native
+Functional Tests for Native Apps
