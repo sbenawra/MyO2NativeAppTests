@@ -46,7 +46,7 @@ public class TestForAppiumAndroid {
     @Test
     public void signInSetUpPinEnterPin() throws InterruptedException {
 
-//        Sign in Screen
+//      Sign in Screen
         driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"" + MYO2_DEV_DEBUG_RESOURCE_ID + "EditUsername\")").sendKeys("447711111121@gmail.com");
         driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"" + MYO2_DEV_DEBUG_RESOURCE_ID + "EditPassword\")").sendKeys("password");
         driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"" + MYO2_DEV_DEBUG_RESOURCE_ID + "buttonOKSignIn\")").click();
@@ -56,7 +56,7 @@ public class TestForAppiumAndroid {
         driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"" + MYO2_DEV_DEBUG_RESOURCE_ID + "PIN1\")").click();
         driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"" + MYO2_DEV_DEBUG_RESOURCE_ID + "PIN1\")").sendKeys("1234");
 
-//      Home Screen - Broadcast messsage
+//      Devices Screen - Broadcast messsage
         driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"" + MYO2_DEV_DEBUG_RESOURCE_ID + "dialogbox_middle\")").click();
 
         driver.closeApp();
@@ -77,6 +77,26 @@ public class TestForAppiumAndroid {
 
     }
 
+
+    @Test
+    public void allChargesScreen() throws InterruptedException {
+
+//      Sign in Screen
+        driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"" + MYO2_DEV_DEBUG_RESOURCE_ID + "EditUsername\")").sendKeys("447711111121@gmail.com");
+        driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"" + MYO2_DEV_DEBUG_RESOURCE_ID + "EditPassword\")").sendKeys("password");
+        driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"" + MYO2_DEV_DEBUG_RESOURCE_ID + "buttonOKSignIn\")").click();
+
+//      PIN Screen
+        assertEquals("Set a 4-digit PIN to keep your details safe:", driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"" + MYO2_DEV_DEBUG_RESOURCE_ID + "text1\")").getText());
+        driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"" + MYO2_DEV_DEBUG_RESOURCE_ID + "PIN1\")").click();
+        driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"" + MYO2_DEV_DEBUG_RESOURCE_ID + "PIN1\")").sendKeys("1234");
+
+//      Devices Screen - Broadcast messsage
+        driver.findElementByAndroidUIAutomator("new UiSelector().resourceId(\"" + MYO2_DEV_DEBUG_RESOURCE_ID + "dialogbox_middle\")").click();
+//      XPATH Example
+        driver.findElementByXPath("//android.widget.ScrollView//android.widget.FrameLayout[2]").click();
+
+    }
 
     @After
     public void tearDown() throws Exception {
