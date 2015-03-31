@@ -96,6 +96,10 @@ public class TestForAppiumAndroid {
 //      XPATH Example
         driver.findElementByXPath("//android.widget.ScrollView//android.widget.FrameLayout[2]").click();
 
+        driver.scrollTo("Upgrade");
+
+
+
     }
 
     @After
